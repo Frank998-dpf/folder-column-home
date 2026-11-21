@@ -3,7 +3,7 @@
   "name": "文件首页",
   "version": "0.1.0",
   "minAppVersion": "1.12.4",
-  "description": "在独立首页中按自适应竖列浏览文件夹，分别控制整列和列内项目的显示。",
+  "description": "按文件夹列浏览 Vault，并管理首页显示内容与快速进入笔记。.",
   "author": "Frank998-dpf",
   "isDesktopOnly": false
 }
