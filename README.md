@@ -1,6 +1,6 @@
-# 文件首页（Folder Column Home）
+# Folder Column Home（文件首页）
 
-Obsidian 插件：在独立首页按文件夹列浏览 Vault 内容，并可配置显示的顶层文件夹与快速进入笔记。
+Obsidian 插件：在独立首页按文件夹列浏览 Vault 内容，并可配置显示的顶层文件夹与快速进入笔记。插件在目录中的显示名称为 Folder Column Home。
 
 ## 功能
 
@@ -12,15 +12,15 @@ Obsidian 插件：在独立首页按文件夹列浏览 Vault 内容，并可配�
 
 ## 安装
 
-1. 下载本仓库 Release 中的 `folder-column-home-0.1.0.zip`。
+1. 下载本仓库 Release 中的 `folder-column-home-0.1.1.zip`。
 2. 解压到 `<Vault>/.obsidian/plugins/folder-column-home/`。
-3. 在 Obsidian 设置 → 第三方插件中启用“文件首页”。
+3. 在 Obsidian 设置 → 第三方插件中启用 Folder Column Home（文件首页）。
 
 也可以将 Release 中的 `main.js`、`manifest.json`、`styles.css` 放入上述目录，然后重新加载 Obsidian。
 
 ## 配置
 
-在 Obsidian 设置 → 第三方插件 → 文件首页中配置首页显示的文件夹和快速进入内容。
+在 Obsidian 设置 → 第三方插件 → Folder Column Home 中配置首页显示的文件夹和快速进入内容。
 
 ## 兼容性
 
