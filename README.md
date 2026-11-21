@@ -30,3 +30,7 @@ Obsidian 插件：在独立首页按文件夹列浏览 Vault 内容，并可配�
 ## 发布文件
 
 Release 包仅包含运行所需的 `main.js`、`manifest.json` 和 `styles.css`。Vault 私人配置不包含在发布包内。
+
+## License
+
+[MIT License](LICENSE).
