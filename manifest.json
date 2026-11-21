@@ -1,7 +1,7 @@
 {
   "id": "folder-column-home",
-  "name": "文件首页",
-  "version": "0.1.0",
+  "name": "Folder Column Home",
+  "version": "0.1.1",
   "minAppVersion": "1.12.4",
   "description": "按文件夹列浏览 Vault，并管理首页显示内容与快速进入笔记.",
   "author": "Frank998-dpf",
