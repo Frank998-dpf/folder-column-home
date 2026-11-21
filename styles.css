@@ -1,0 +1,202 @@
+.folder-home {
+  --folder-home-border: color-mix(in srgb, var(--background-modifier-border) 72%, transparent);
+  container: folder-home / inline-size;
+  background: var(--background-secondary);
+  padding: clamp(14px, 3%, 32px);
+  overflow: auto;
+}
+
+.folder-home-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(182px, 25%, 245px);
+  grid-template-areas: "folders quick";
+  align-items: start;
+  gap: 14px;
+}
+
+.folder-home-folders { grid-area: folders; min-width: 0; }
+
+.folder-home-quick { grid-area: quick; }
+
+@container folder-home (max-width: 645px) {
+  .folder-home-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "quick" "folders";
+  }
+}
+
+.folder-home-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 195px), 1fr));
+  align-items: start;
+  gap: 12px;
+}
+
+.folder-home-column,
+.folder-home-quick {
+  min-width: 0;
+  background: var(--background-primary);
+  border: 1px solid var(--folder-home-border);
+  border-radius: 8px;
+}
+
+.folder-home-column {
+  --folder-home-accent: oklch(58% 0.15 var(--folder-home-hue));
+  --folder-home-column-fill: color-mix(in srgb, var(--folder-home-accent) 5%, var(--background-primary));
+  --folder-home-tab-fill: color-mix(in srgb, var(--folder-home-accent) 16%, var(--background-primary));
+  --folder-home-tab-edge: color-mix(in srgb, var(--folder-home-accent) 76%, var(--background-primary));
+  --folder-home-column-hover: color-mix(in srgb, var(--folder-home-accent) 15%, var(--folder-home-column-fill));
+  background: var(--folder-home-column-fill);
+  border-color: color-mix(in srgb, var(--folder-home-accent) 26%, var(--background-primary));
+}
+
+.theme-dark .folder-home-column {
+  --folder-home-accent: oklch(76% 0.13 var(--folder-home-hue));
+}
+
+.folder-home-column-heading,
+.folder-home-quick-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--folder-home-border);
+}
+
+.folder-home-column-heading {
+  background: var(--folder-home-tab-fill);
+  border-radius: 7px 7px 0 0;
+  box-shadow: inset 3px 0 var(--folder-home-tab-edge);
+  border-bottom-color: color-mix(in srgb, var(--folder-home-accent) 24%, var(--folder-home-border));
+}
+
+.folder-home-column-name { flex: 1; min-width: 0; }
+.folder-home-column-name h2,
+.folder-home-quick-heading h2 {
+  color: var(--text-normal);
+  font-size: var(--font-ui-small);
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.folder-home-column-heading > .folder-home-icon {
+  color: color-mix(in srgb, var(--folder-home-accent) 65%, var(--text-normal));
+}
+
+.folder-home button:is(.folder-home-item, .folder-home-more) {
+  border: 0;
+  border-radius: 4px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.folder-home button:is(.folder-home-item, .folder-home-more):hover {
+  background: var(--background-modifier-hover);
+}
+
+.folder-home-column button.folder-home-item:hover {
+  background: var(--folder-home-column-hover);
+}
+
+.folder-home-column button.folder-home-top-folder {
+  --folder-home-row-accent: oklch(58% 0.15 var(--folder-home-row-hue));
+  background: color-mix(in srgb, var(--folder-home-row-accent) 14%, var(--background-primary));
+  box-shadow: inset 3px 0 color-mix(in srgb, var(--folder-home-row-accent) 76%, var(--background-primary));
+  margin-block: 2px;
+  padding-inline-start: 8px;
+}
+
+.theme-dark .folder-home-column button.folder-home-top-folder {
+  --folder-home-row-accent: oklch(76% 0.13 var(--folder-home-row-hue));
+}
+
+.folder-home-column button.folder-home-top-folder:hover {
+  background: color-mix(in srgb, var(--folder-home-row-accent) 22%, var(--background-primary));
+}
+
+.folder-home button:is(.folder-home-item, .folder-home-more):focus-visible {
+  outline: 1px solid var(--interactive-accent);
+  outline-offset: -1px;
+}
+
+.folder-home button.folder-home-more {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  color: var(--text-muted);
+}
+
+.folder-home-items {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+.folder-home-create-form { display: flex; gap: 8px; }
+.folder-home-create-form input { flex: 1; min-width: 0; }
+.folder-home-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+.folder-home button.folder-home-item {
+  display: grid;
+  grid-template-columns: 15px minmax(0, 1fr);
+  align-items: center;
+  text-align: start;
+  gap: 5px;
+  width: 100%;
+  min-height: 28px;
+  height: auto;
+  padding: 3px 6px;
+  color: var(--text-normal);
+  font-size: var(--font-ui-small);
+  line-height: 1.35;
+}
+
+.folder-home-board button.folder-home-item {
+  grid-template-columns: 11px 15px minmax(0, 1fr);
+}
+
+.folder-home-board .folder-home-item > .folder-home-icon { grid-area: 1 / 2; }
+.folder-home-board .folder-home-item > span:nth-child(2) { grid-area: 1 / 3; }
+.folder-home-board .folder-home-item > .folder-home-arrow { grid-area: 1 / 1; }
+
+.folder-home-item > span:nth-child(2) {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.folder-home-branch { margin-inline-start: 12px; }
+.folder-home-items .folder-home-items { padding: 0; }
+.folder-home-branch[hidden] { display: none; }
+.folder-home-icon, .folder-home-arrow { display: inline-flex; flex: none; color: var(--text-muted); }
+.folder-home-icon svg { width: 14px; height: 14px; }
+.folder-home-arrow svg { width: 11px; height: 11px; }
+.folder-home-muted { color: var(--text-muted); font-size: var(--font-ui-small); }
+.folder-home-muted { margin: 10px; }
+
+.folder-home-dialog {
+  max-height: 65vh;
+  overflow: auto;
+}
+
+.folder-home-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 36px;
+  padding: 4px 6px;
+  border-radius: var(--radius-s);
+  overflow-wrap: anywhere;
+}
+
+.folder-home-option:hover { background: var(--background-modifier-hover); }
+.folder-home-option input { flex: none; }
+
+@media (pointer: coarse) {
+  .folder-home button:is(.folder-home-item, .folder-home-more),
+  .folder-home-option { min-height: 44px; }
+}
